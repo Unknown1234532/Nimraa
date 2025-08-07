@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happyyy 17Th Birthdayyy Chaprii</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="countdown-container">
+    <h1>Nimra's Magical Birthday Begins In...</h1>
+    <div id="countdown"></div>
+    <p>Come back at midnight for a surprise ✨</p>
+  </div>
+
+  <div id="game-container" style="display: none;">
+    <h2>🎮 Welcome to The Birthday Quest 🎮</h2>
+    <p>Use the arrow keys to move and unlock surprises!</p>
+    <div id="game-area">
+      <p id="game-text">Level 1: Solve the riddle - "Where did we first talk?"</p>
+      <input type="text" id="user-answer" placeholder="Your answer here">
+      <button onclick="nextLevel()">Submit</button>
+    </div>
+  </div>
+
+  <div id="final-message" style="display: none;">
+    <h2>🎁 Your Reward 🎁</h2>
+    <p>
+     <div style="font-family: cursive; font-size: 18px; line-height: 1.6;">
+  <p>My dearest Nimra,</p>
+
+  <p>I know life hasn’t been easy. You carry pain no one sees. You feel misunderstood at times. But I see you. I feel your heart, your hopes, your silent strength.</p>
+
+  <p>You are a storm wrapped in sunlight powerful and radiant, even when you doubt yourself. I see your kindness when you smile at strangers, your softness when you hide your tears, and your bravery when you keep going despite it all.</p>
+
+  <p>You're not alone. Not now, not ever. Whatever storms you’re walking through family problems, pressure, sadness they don't define your worth. They don’t make you less. If anything, they show how much you've endured, how far you’ve come.</p>
+
+  <p>You are brave. You are brilliant. You are beautiful not just on the outside, but deep, soul-level beautiful. The kind of beautiful that heals others without realizing it.</p>
+
+  <p>Please believe in Allah’s plan. He hasn’t forgotten you. He’s just writing a story that takes a little longer to bloom. And every tear you’ve cried, every prayer you’ve whispered in the dark it’s all being heard. Answered. Slowly, lovingly.</p>
+
+  <p>Don’t give up. Don’t shrink yourself for others. Don't think you’re too much or not enough. You are exactly what this world needs just the way you are.</p>
+
+  <p>And me? I’m right here. Always. Cheering for you. Praying for you. Loving you beyond words. Not because you’re perfect but because you’re YOU. Raw, real, and breathtakingly rare.</p>
+
+  <p>✨ Happy 17th Birthday, Nimra ✨</p>
+
+  <p>You are my sunshine on the darkest days. My best friend when I feel lost. My safe place when everything feels heavy. You are my forever girl in every universe. 🎂❤️</p>
+
+  <p>Here’s to your dreams, your strength, your smile, and your future. May it be filled with peace, love, success, and all the happiness this world can hold. I loveee youuu sooo sooo muchhh</p>
+
+  <p style="margin-top: 20px; font-size: 22px;">🌈💌💫 Forever yours.</p>
+</div>
+      You're not alone in this. I’m here, cheering you on every step of the way. You are stronger than you know, more deserving than you believe, and more loved than you realize. So hold on. Your future is not just bright it's breathtaking. 🌸
+    </p>
+  </div>
+
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const TEST_MODE = false; // set to true for 10-second countdown
+      const countdownElement = document.getElementById("countdown");
+      const countdownContainer = document.getElementById("countdown-container");
+      const gameContainer = document.getElementById("game-container");
+
+      // Set target time
+      let targetTime;
+      if (TEST_MODE) {
+        targetTime = new Date().getTime() + 10 * 1000; // 10 seconds from now
+      } else {
+        // August 8, 2025, 12:00 PM Pakistan Time (UTC+5)
+        targetTime = new Date("2025-08-08T07:00:00Z").getTime(); // UTC equivalent
+      }
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const timeRemaining = targetTime - now;
+
+        if (timeRemaining <= 0) {
+          countdownElement.innerHTML = "🎉 It's time! 🎉";
+          countdownContainer.style.display = "none";
+          gameContainer.style.display = "block";
+          return;
+        }
+
+        const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+
+        requestAnimationFrame(updateCountdown);
+      }
+
+      updateCountdown();
+    });
+
+    // Game logic
+    let currentLevel = 1;
+    function nextLevel() {
+      const answer = document.getElementById("user-answer").value.trim().toLowerCase();
+      const gameText = document.getElementById("game-text");
+
+      if (currentLevel === 1) {
+        if (answer === "among us" || answer === "Among us") {
+          currentLevel++;
+          gameText.innerText = "Level 2: What's my favorite color?";
+          document.getElementById("user-answer").value = "";
+        } else {
+          alert("Ye nhi pata T-T?.");
+        }
+      } else if (currentLevel === 2) {
+        if (answer === "blue" || answer === "black") {
+          currentLevel++;
+          gameText.innerText = "Level 3: What's something I say often?";
+          document.getElementById("user-answer").value = "";
+        } else {
+          alert("Itna nhi pata Jahill? 😉");
+        }
+      } else if (currentLevel === 3) {
+        if (answer.includes("photo bhejo") || answer.includes("Photo bhejo")) {
+          document.getElementById("game-container").style.display = "none";
+          document.getElementById("final-message").style.display = "block";
+        } else {
+          alert("Chapriii Sahi se sochoooo");
+        }
+      }
+    }
+  </script>
+ <!-- Static background hearts -->
+<!-- Floating background hearts -->
+<!-- Improved Floating Hearts -->
+<div class="floating-heart" style="left: 10%; animation-delay: 0s; transform: scale(0.6); opacity: 0.6;"></div>
+<div class="floating-heart" style="left: 20%; animation-delay: 2s; transform: scale(0.9); opacity: 0.8;"></div>
+<div class="floating-heart" style="left: 30%; animation-delay: 4s; transform: scale(0.6); opacity: 0.5;"></div>
+<div class="floating-heart" style="left: 40%; animation-delay: 6s; transform: scale(1); opacity: 0.9;"></div>
+<div class="floating-heart" style="left: 50%; animation-delay: 1s; transform: scale(0.7); opacity: 0.7;"></div>
+<div class="floating-heart" style="left: 60%; animation-delay: 3s; transform: scale(0.9); opacity: 0.6;"></div>
+<div class="floating-heart" style="left: 70%; animation-delay: 5s; transform: scale(0.7); opacity: 0.8;"></div>
+<div class="floating-heart" style="left: 80%; animation-delay: 7s; transform: scale(0.6); opacity: 0.9;"></div>
+<div class="floating-heart" style="left: 90%; animation-delay: 2.5s; transform: scale(0.9); opacity: 0.5;"></div>
+<div class="floating-heart" style="left: 95%; animation-delay: 4.5s; transform: scale(0.6); opacity: 0.75;"></div>
+
+
+</body>
+</html>
